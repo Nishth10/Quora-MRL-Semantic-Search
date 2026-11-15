@@ -1,0 +1,427 @@
+[
+  {
+    "id": "q_0001",
+    "question": "How do I prepare for a software engineering technical interview at Google?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0002",
+    "question": "What is the recommended method to prepare for a software engineering technical interview at Google?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0003",
+    "question": "What is the best way to negotiate a salary offer?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0004",
+    "question": "How can I effectively negotiate a salary offer?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0005",
+    "question": "How can I transition my career from mechanical engineering to data science?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0006",
+    "question": "What are the best tips to write an impressive resume for freshers?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0007",
+    "question": "Is getting an MBA worth it in the current tech industry?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0008",
+    "question": "What should I do if I feel burned out at my first software job?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0009",
+    "question": "How do recruiters screen resumes in less than 30 seconds?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0010",
+    "question": "What are the key differences between a product manager and a project manager?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0011",
+    "question": "How can someone get an internship at top tech companies without prior experience?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0012",
+    "question": "What skills will be most in demand for AI and software engineers over the next 5 years?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0013",
+    "question": "How can I improve my LinkedIn profile to attract top tech recruiters?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0014",
+    "question": "What are top techniques to enhance my LinkedIn profile to attract top tech recruiters?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0015",
+    "question": "What questions should you ask an interviewer at the end of a job interview?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0016",
+    "question": "Is remote work truly better than working in an office environment?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0017",
+    "question": "How do you deal with a toxic manager or coworker professionally?",
+    "category": "Career & Jobs"
+  },
+  {
+    "id": "q_0018",
+    "question": "What is the best way to learn Python from scratch for beginners?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0019",
+    "question": "How can I effectively learn Python from scratch for beginners?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0020",
+    "question": "How does a hash table work internally and how are collisions resolved?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0021",
+    "question": "What are the major differences between C++ and Rust for systems programming?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0022",
+    "question": "Can someone explain Object-Oriented Programming (OOP) concepts with simple analogies?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0023",
+    "question": "How does Git work behind the scenes with commits, trees, and blobs?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0024",
+    "question": "What is the time complexity of QuickSort in the average and worst case?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0025",
+    "question": "How do relational databases (SQL) compare to NoSQL databases like MongoDB?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0026",
+    "question": "What are the best resources to master data structures and algorithms?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0027",
+    "question": "Why is Docker and containerization so popular in modern software engineering?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0028",
+    "question": "What is the reason behind Docker and containerization so popular in modern software engineering?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0029",
+    "question": "What is the difference between concurrency and parallelism in computer science?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0030",
+    "question": "How does memory management and garbage collection work in Java vs Python?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0031",
+    "question": "What are the advantages of using TypeScript over JavaScript in web development?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0032",
+    "question": "How do web browsers render HTML, CSS, and execute JavaScript under the hood?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0033",
+    "question": "What is dynamic programming and how can I recognize DP problems easily?",
+    "category": "Computer Science & Programming"
+  },
+  {
+    "id": "q_0034",
+    "question": "What is the difference between Machine Learning, Deep Learning, and Artificial Intelligence?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0035",
+    "question": "How do Transformer models and self-attention mechanisms work in NLP?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0036",
+    "question": "What is Matryoshka Representation Learning (MRL) and how does it save vector database storage?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0037",
+    "question": "Why is backpropagation essential for training multi-layer neural networks?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0038",
+    "question": "What is the reason behind backpropagation essential for training multi-layer neural networks?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0039",
+    "question": "What is the difference between supervised, unsupervised, and reinforcement learning?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0040",
+    "question": "How does cosine similarity differ from Euclidean distance in high-dimensional vector search?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0041",
+    "question": "What are vector embeddings and how do models like Sentence-BERT create them?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0042",
+    "question": "What is the difference between generative AI models and discriminative models?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0043",
+    "question": "How does gradient descent optimize the loss function in neural networks?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0044",
+    "question": "Why do deep neural networks require activation functions like ReLU instead of linear ones?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0045",
+    "question": "How do LLMs handle hallucination and how does RAG (Retrieval-Augmented Generation) help?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0046",
+    "question": "What are the best open-source LLMs available today for local fine-tuning?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0047",
+    "question": "How can you evaluate an Information Retrieval system using MRR@10 and NDCG@10?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0048",
+    "question": "What is transfer learning and why has it revolutionized natural language processing?",
+    "category": "Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": "q_0049",
+    "question": "What is the most effective and sustainable way to lose weight and belly fat?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0050",
+    "question": "How many hours of sleep does an adult really need for optimal brain function?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0051",
+    "question": "Is intermittent fasting effective for weight loss and overall health?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0052",
+    "question": "What are the best home exercises for building core strength without equipment?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0053",
+    "question": "What are the primary differences between whey protein isolate and concentrate?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0054",
+    "question": "How does chronic stress affect physical health and the immune system?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0055",
+    "question": "What are simple habits to reduce screen time and digital eye strain?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0056",
+    "question": "How can one overcome insomnia and fall asleep quickly at night?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0057",
+    "question": "Is drinking 3 liters of water every day really necessary for health?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0058",
+    "question": "What causes anxiety and what are scientifically proven techniques to calm it down?",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "q_0059",
+    "question": "How can I improve my English speaking fluency and reduce hesitation?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0060",
+    "question": "What are top techniques to enhance my English speaking fluency and reduce hesitation?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0061",
+    "question": "What are the best strategies to learn a new language as an adult?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0062",
+    "question": "How do you become a more articulate and persuasive speaker in public?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0063",
+    "question": "What is the most effective way to build an extensive English vocabulary?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0064",
+    "question": "How can I overcome the fear of public speaking and stage fright?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0065",
+    "question": "What makes a conversation engaging when talking to strangers?",
+    "category": "Language & Communication"
+  },
+  {
+    "id": "q_0066",
+    "question": "Why is the sky blue during the day and red during sunrise and sunset?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0067",
+    "question": "What is the reason behind the sky blue during the day and red during sunrise and sunset?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0068",
+    "question": "How does Einstein's theory of general relativity explain gravity?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0069",
+    "question": "What happens inside a black hole beyond the event horizon?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0070",
+    "question": "How do airplanes generate lift and stay airborne despite heavy weight?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0071",
+    "question": "What is quantum entanglement and why did Einstein call it spooky action at a distance?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0072",
+    "question": "Why do seasons change on Earth and what causes extreme weather patterns?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0073",
+    "question": "How does the immune system remember viruses and pathogens after vaccination?",
+    "category": "Science & Nature"
+  },
+  {
+    "id": "q_0074",
+    "question": "What are the best investment options for beginners with low risk tolerance?",
+    "category": "Finance & Investing"
+  },
+  {
+    "id": "q_0075",
+    "question": "How does compound interest work and why is starting early so powerful?",
+    "category": "Finance & Investing"
+  },
+  {
+    "id": "q_0076",
+    "question": "What is the difference between index funds, ETFs, and mutual funds?",
+    "category": "Finance & Investing"
+  },
+  {
+    "id": "q_0077",
+    "question": "How can I create a realistic monthly budget and stick to it?",
+    "category": "Finance & Investing"
+  },
+  {
+    "id": "q_0078",
+    "question": "What caused the 2008 global financial crisis and could it happen again?",
+    "category": "Finance & Investing"
+  },
+  {
+    "id": "q_0079",
+    "question": "How does inflation erode purchasing power and how can investors protect themselves?",
+    "category": "Finance & Investing"
+  },
+  {
+    "id": "q_0080",
+    "question": "What are the most important life lessons people learn too late in life?",
+    "category": "Life & Philosophy"
+  },
+  {
+    "id": "q_0081",
+    "question": "How do you find your true passion or life purpose when feeling lost?",
+    "category": "Life & Philosophy"
+  },
+  {
+    "id": "q_0082",
+    "question": "What is the difference between happiness and fulfillment?",
+    "category": "Life & Philosophy"
+  },
+  {
+    "id": "q_0083",
+    "question": "How can someone build self-discipline and stop procrastinating?",
+    "category": "Life & Philosophy"
+  },
+  {
+    "id": "q_0084",
+    "question": "What habits separate highly successful individuals from average ones?",
+    "category": "Life & Philosophy"
+  },
+  {
+    "id": "q_0085",
+    "question": "How do you maintain meaningful friendships in adulthood?",
+    "category": "Life & Philosophy"
+  }
+]

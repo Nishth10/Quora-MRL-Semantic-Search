@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora Semantic Search — Matryoshka Representation Learning (MRL)</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="hero-header">
+            <div class="hero-badge">
+                <i class="fa-solid fa-layer-group"></i> Matryoshka Representation Learning (MRL)
+            </div>
+            <h1 class="hero-title">Quora Question Semantic Search</h1>
+            <p class="hero-subtitle">
+                Powered by <code>sentence-transformers/all-MiniLM-L6-v2</code>. Dynamically truncate embedding dimensions on the fly with ultra-low retrieval latency.
+            </p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-card">
+            <!-- Step 1: MRL Dimension Selection -->
+            <div class="control-section">
+                <div class="section-label-group">
+                    <span class="step-num">1</span>
+                    <label class="section-label">Choose MRL Dimension (Embedding Size)</label>
+                    <span class="section-hint">Select representation size before searching</span>
+                </div>
+                
+                <div class="dims-grid" id="dimsSelector">
+                    {% for dim in supported_dims %}
+                    <button type="button" 
+                            class="dim-chip {% if dim == default_dim %}active{% endif %}" 
+                            data-dim="{{ dim }}">
+                        <div class="dim-chip-header">
+                            <span class="dim-val">{{ dim }}d</span>
+                            {% if dim == 384 %}
+                            <span class="dim-tag base">Full</span>
+                            {% else %}
+                            <span class="dim-tag comp">-{{ ((384 - dim) / 384 * 100) | round | int }}%</span>
+                            {% endif %}
+                        </div>
+                        <div class="dim-meta">
+                            <span>{{ dim * 4 }} B/vec</span>
+                            <span>{{ (384 / dim) | round(1) }}x compact</span>
+                        </div>
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Step 2: Search Input -->
+            <div class="control-section">
+                <div class="section-label-group">
+                    <span class="step-num">2</span>
+                    <label class="section-label" for="searchInput">Enter Quora Question to Search</label>
+                    <span class="section-hint">Type any question to find semantically matching Quora questions</span>
+                </div>
+
+                <div class="search-bar-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" 
+                           id="searchInput" 
+                           class="search-input" 
+                           placeholder="e.g. How can I improve my English speaking fluency? or How do I learn Python?"
+                           autocomplete="off">
+                    <button type="button" id="searchBtn" class="search-submit-btn">
+                        <span>Search</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Quick Example Chips -->
+                <div class="quick-examples">
+                    <span class="examples-label"><i class="fa-regular fa-lightbulb"></i> Try asking:</span>
+                    <div class="example-chips">
+                        <button class="example-btn">How can I become fluent in English?</button>
+                        <button class="example-btn">What is the best way to lose belly fat?</button>
+                        <button class="example-btn">How to learn Python programming from scratch?</button>
+                        <button class="example-btn">How does vector search with embeddings work?</button>
+                        <button class="example-btn">How to prepare for tech job interviews?</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latency & Efficiency Metrics Showcase (Sanchit's Core Requirement) -->
+            <div id="metricsBar" class="metrics-bar hidden">
+                <div class="metric-card highlight-time">
+                    <div class="metric-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Search Latency</div>
+                        <div class="metric-value" id="latencySeconds">0.000 s</div>
+                        <div class="metric-sub" id="latencyMs">0.0 ms</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Active MRL Dimension</div>
+                        <div class="metric-value" id="metricDim">64d</div>
+                        <div class="metric-sub" id="metricDimSub">of 384 original</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Vector Storage</div>
+                        <div class="metric-value" id="metricBytes">256 Bytes</div>
+                        <div class="metric-sub" id="metricSavings">83.3% savings</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="metric-content">
+                        <div class="metric-label">Timing Breakdown</div>
+                        <div class="breakdown-pills">
+                            <span title="SentenceTransformer query encoding" id="breakdownEnc">Enc: --ms</span>
+                            <span title="Matryoshka slicing & normalization" id="breakdownMrl">MRL: --ms</span>
+                            <span title="Vector similarity search" id="breakdownSearch">Sim: --ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Action Bar -->
+            <div class="action-strip">
+                <button type="button" id="compareAllBtn" class="secondary-btn" disabled>
+                    <i class="fa-solid fa-chart-simple"></i> Compare Latency & Quality Across All Dimensions
+                </button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Computing query embeddings and ranking matches...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section hidden">
+                <div class="results-header">
+                    <h2 class="results-title">
+                        <i class="fa-solid fa-list-check"></i> Semantically Matched Quora Questions
+                    </h2>
+                    <span class="results-count" id="resultsCount">Top 10 matches</span>
+                </div>
+
+                <div id="resultsList" class="results-list">
+                    <!-- Populated via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Dimension Comparison Modal / Container -->
+            <div id="comparisonContainer" class="comparison-container hidden">
+                <div class="comparison-header">
+                    <h3><i class="fa-solid fa-scale-balanced"></i> Multi-Dimension MRL Benchmark (Single Query)</h3>
+                    <button type="button" id="closeCompareBtn" class="close-btn">&times;</button>
+                </div>
+                <p class="comparison-desc">
+                    See how retrieval latency, vector memory, and top question match vary as you slice from 384 dimensions down to 16 dimensions.
+                </p>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Latency</th>
+                                <th>Vector Size</th>
+                                <th>Storage Saved</th>
+                                <th>Top-1 Match</th>
+                                <th>Cosine Score</th>
+                                <th>Status vs 384d</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer / Technical Info -->
+        <footer class="app-footer">
+            <div class="footer-info">
+                <span><i class="fa-solid fa-code"></i> Model: <strong>all-MiniLM-L6-v2</strong></span>
+                <span><i class="fa-solid fa-database"></i> Corpus: <strong>{{ corpus_size }} Quora questions</strong></span>
+                <span><i class="fa-solid fa-graduation-cap"></i> NLP Deep Learning Project</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
