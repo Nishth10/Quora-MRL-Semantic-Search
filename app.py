@@ -9,14 +9,6 @@ import time
 import json
 import numpy as np
 
-# Use local cached files directly without querying Hugging Face Hub on startup
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["TRANSFORMERS_OFFLINE"] = "1"
-
-from flask import Flask, render_template, request, jsonify
-
-app = Flask(__name__)
-
 # Constants
 SUPPORTED_DIMS = [384, 256, 128, 64, 32, 16]
 DEFAULT_DIM = 64
@@ -24,6 +16,23 @@ MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 CORPUS_FILE = os.path.join(DATA_DIR, "quora_corpus.json")
 EMB_FILE = os.path.join(DATA_DIR, "quora_embeddings.npy")
+
+# Download and Cache the model
+hf_home = os.environ.get("HF_HOME", os.path.expanduser("~/.cache/huggingface"))
+hf_hub_cache = os.environ.get("HUGGINGFACE_HUB_CACHE", os.path.join(hf_home, "hub"))
+model_dir_name = f"models--{MODEL_NAME.replace('/', '--')}"
+
+if os.path.exists(os.path.join(hf_hub_cache, model_dir_name)):
+    print("[Setup] Cached model found. Offline mode ENABLED.")
+    os.environ["HF_HUB_OFFLINE"] = "1"
+    os.environ["TRANSFORMERS_OFFLINE"] = "1"
+else:
+    print("[Setup] Model not found locally. Offline mode DISABLED for initial download.")
+
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
 
 # Global state
 model = None
